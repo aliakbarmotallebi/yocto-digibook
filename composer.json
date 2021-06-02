@@ -13,7 +13,8 @@
         "illuminate/database": "^8.42",
         "symfony/dotenv": "^5.2",
         "illuminate/support": "^8.42",
-        "bulveyz/router-php": "^1.0"
+        "bulveyz/router-php": "^1.0",
+        "illuminate/pagination": "^8.44"
     },
 	"autoload": {
         "psr-4": {
