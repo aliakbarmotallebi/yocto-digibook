@@ -2,6 +2,17 @@
 <?php include_once('commons/header.html.php') ?>
 <?php include_once('commons/nav.html.php') ?>
 
+<div class="container">
+  <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <?php foreach($catgories as $catgory): ?>
+        <a class="p-2 link-secondary" href="#">
+          <?= $catgory->label ?>
+        </a>
+        <?php endforeach ?>
+      </nav>
+  </div>
+</div>
 <main>
 
   <div class="album py-5 bg-light">
