@@ -2,19 +2,14 @@
 
 use BulveyzRouter\Route;
 
-
 Route::setNamespace('App\Controllers');
 
-Route::get('/home', function() {
-  echo "Home";
-});
+Route::get('/', 'Main\MainController@index')->name('main.index');
+
+Route::get('/login', 'Auth\LoginController@index')->name('auth.index');
+Route::post('/auth/login', 'Auth\LoginController@login')->name('auth.login');
+//
 
 
-Route::any('/user/{id}', function($param) {
-  echo "User" . $param->id;
-});
-
-
-Route::get('/dashboard/index', 'Dashboard\DashboardController@index');
-
-// Route::get('/create/post/{id}', 'Dashboard\DashboardController@store');
+//dashboard routes
+Route::get('/dashboard/index', 'Dashboard\DashboardController@index')->name('dashboard.index');

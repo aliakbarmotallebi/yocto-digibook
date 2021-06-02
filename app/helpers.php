@@ -1,7 +1,7 @@
 <?php
 
 use App\Helper\View;
-
+use App\Models\User;
 
 if (! function_exists('view')) {
 
@@ -55,7 +55,7 @@ if ( ! function_exists('asset'))
 	{
         $DS  = DIRECTORY_SEPARATOR;
 
-		return getenv('DB_CONNECTION') . $DS . $path;
+		return getenv('APP_URL') . $DS . "public" . $DS . $path;
 	}
 }
 
@@ -86,5 +86,20 @@ if (! function_exists('validation')) {
        }
     
        return true;
+    }
+}
+
+if (! function_exists('auth')) {
+    
+    function auth() {
+        return new User;
+    }
+}
+
+if (! function_exists('redirect')) {
+
+    function redirect($param = null) {
+        header('location:'. getenv('APP_URL', '/') . $param);
+        exit();
     }
 }
