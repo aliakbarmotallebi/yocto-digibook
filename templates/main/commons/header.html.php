@@ -6,7 +6,8 @@
     <title>فروشگاه اینترنتی کتاب</title>
     <!-- Bootstrap core CSS -->
     <link href="<?= asset('/styles/bootstrap.rtl.min.css') ?>" rel="stylesheet">
-    <link href="<?= asset('/styles/main.style.css') ?>" rel="stylesheet">
+    <link href="<?= asset('/styles/main.css') ?>" rel="stylesheet">
+    <link href="<?= asset('/styles/fonts.css') ?>" rel="stylesheet">
     <meta name="theme-color" content="#7952b3">
   </head>
 <body>
