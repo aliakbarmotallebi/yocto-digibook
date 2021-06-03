@@ -99,7 +99,18 @@ if (! function_exists('auth')) {
 if (! function_exists('redirect')) {
 
     function redirect($param = null) {
-        header('location:'. getenv('APP_URL', '/') . $param);
+        header('location:'. url( $param ) );
         exit();
     }
 }
+
+
+if (! function_exists('url')) {
+
+    function url($path = null)
+    {
+        return getenv('APP_URL', 'http://localhost/') . $path ;
+    }
+}
+
+

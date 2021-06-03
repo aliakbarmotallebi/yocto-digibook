@@ -22,6 +22,11 @@ class LoginController {
     
     public function login()
     {
+
+      if(! request()->isPost()){
+        return redirect(route('auth.index'));
+      } 
+
       $rules = [
           'username' => 'required',
           'password' => 'required|min:4',
@@ -33,15 +38,15 @@ class LoginController {
 
       $user = new User;
       $user->username = request('username');
-      $user->password = request('password');
-
+      $user->passcode = request('password');
+      
       
       if( $user->login() ) {
-        flash()->success(':)');
+        flash()->success('با موفقیت وارد حساب کاربری شدید');
         return redirect($this->redirectTo());
       }
 
-      flash()->danger(':/');
+      flash()->danger('نام کاربری یا رمز عبور اشتباه می باشد');
       return redirect(route('auth.index'));
 
     }

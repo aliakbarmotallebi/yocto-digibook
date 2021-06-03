@@ -32,14 +32,14 @@ class User extends Model {
         return (bool) ($this->role == self::ROLE_USER);
     }
 
-    public function login(): bool
+    public function login()
     {
         $user = $this->whereUsername($this->username)->first();
 
         if(! $user )
         { return false; }
 
-        if(! password_verify($this->password, $user->password))
+        if(! password_verify($this->passcode, $user->password))
         { return false; }
 
         session()->set('user_id', $user->id);

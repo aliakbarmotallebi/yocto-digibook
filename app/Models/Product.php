@@ -23,5 +23,10 @@ class Product extends Model {
     }
 
 
+    public  function scopeSearch($query, $value){
+
+        return $query->where('title', 'LIKE', "%$value%");
+
+    }
 
 }

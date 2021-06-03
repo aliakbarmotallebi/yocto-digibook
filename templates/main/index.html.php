@@ -1,12 +1,13 @@
 
-<?php include_once('commons/header.html.php') ?>
-<?php include_once('commons/nav.html.php') ?>
+<?php include_once(__DIR__ . '/commons/header.html.php') ?>
+<?php include_once(__DIR__ . '/commons/nav.html.php') ?>
 
 <div class="container">
   <div class="nav-scroller py-1 mb-2">
       <nav class="nav d-flex justify-content-between">
         <?php foreach($catgories as $catgory): ?>
-        <a class="p-2 link-secondary" href="#">
+        <a class="p-2 link-secondary" 
+          href="<?= url("/category/{$catgory->id}") ?>">
           <?= $catgory->label ?>
         </a>
         <?php endforeach ?>
@@ -46,4 +47,4 @@
 
 </main>
 
-<?php include_once('commons/footer.html.php') ?>
+<?php include_once(__DIR__ . '/commons/footer.html.php') ?>

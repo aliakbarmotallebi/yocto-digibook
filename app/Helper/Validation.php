@@ -1,6 +1,6 @@
 <?php namespace App\Helper;
 
-use App\Model\DB;
+use Illuminate\Database\Eloquent\Model;
 
 class Validation
 {
@@ -138,17 +138,6 @@ class Validation
 
     public function unique($item , $value , $param)
     {
-        $db = new DB();
-
-        if(is_null($param))
-            return false;
-
-        $db->from($param);
-
-        if($db->find($item , $value) != false) {
-            $this->errors[$item][] = "مقدار {$item} تکراری میباشد";
-            return false;
-        }
         return true;
     }
 }

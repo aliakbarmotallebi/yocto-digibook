@@ -5,6 +5,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 class Database {
 
     function __construct() {
+		
 		$capsule = new Capsule;
 
 		$capsule->addConnection([
@@ -19,6 +20,7 @@ class Database {
 		]);
 		// Setup the Eloquent ORM… 
 		$capsule->bootEloquent();
+
 	}
 
 }

@@ -12,6 +12,9 @@
   </head>
   <body class="text-center">
     <main class="form-signin">
+      <div class="my-3">
+          <?= flash()->each() ?>
+      </div>
       <form action="<?= route('auth.login') ?>" method="POST">
         <h1 class="h3 mb-3 fw-normal">ورود به حساب کاربری</h1>
         <div class="form-floating">
