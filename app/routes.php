@@ -7,7 +7,9 @@ Route::setNamespace('App\Controllers');
 Route::get('/', 'Main\MainController@index')->name('main.index');
 Route::get('/logout', 'Main\MainController@logout')->name('logout');
 Route::get('/category/{id}', 'Main\MainController@catgeory')->name('main.category');
-
+Route::get('/carts', 'Main\CartController@index')->name('cart.index');
+Route::get('/carts/delete/{rowId}', 'Main\CartController@delete')->name('cart.delete');
+Route::get('/carts/add/{id}', 'Main\CartController@add')->name('cart.add');
 
 Route::get('/login', 'Auth\LoginController@index')->name('auth.index');
 Route::post('/auth/login', 'Auth\LoginController@login')->name('auth.login');

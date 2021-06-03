@@ -2,6 +2,7 @@
 
 use App\Helper\View;
 use App\Models\User;
+use Illuminate\Support\Collection;
 
 if (! function_exists('view')) {
 
@@ -110,6 +111,14 @@ if (! function_exists('url')) {
     function url($path = null)
     {
         return getenv('APP_URL', 'http://localhost/') . $path ;
+    }
+}
+
+if (! function_exists('collect')) {
+
+    function collect($data = [])
+    {
+        return new Collection($data);
     }
 }
 

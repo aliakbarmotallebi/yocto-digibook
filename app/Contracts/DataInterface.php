@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: roocket
- * Date: 4/13/2017
- * Time: 2:17 PM
- */
 
 namespace App\Contracts;
 

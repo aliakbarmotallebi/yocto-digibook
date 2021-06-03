@@ -28,7 +28,9 @@
                 <p class="card-text"><?= $product->title ?></p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">افزودن به سبد</button>
+                    <a href="<?= url("/carts/add/{$product->id}") ?>" class="btn btn-sm btn-outline-secondary">
+                      افزودن به سبد
+                    </a>
                   </div>
                   <small class="text-muted"><?= $product->price ?></small>
                 </div>

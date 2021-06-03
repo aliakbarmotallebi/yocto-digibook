@@ -18,8 +18,10 @@
         <?php endif ?>
       </nav>
 
-      <a href="#" class="btn btn-warning btn-sm d-flex align-items-center text-decoration-none ms-md-auto">
-        سبد خرید <span class="badge rounded-pill bg-dark mx-1">9</span>
+      <a href="<?= route('cart.index') ?>" class="btn btn-warning btn-sm d-flex align-items-center text-decoration-none ms-md-auto">
+        سبد خرید <span class="badge rounded-pill bg-dark mx-1">
+          <?= \App\Facades\Cart::count() ?>
+        </span>
       </a>
     </div>
   </header>

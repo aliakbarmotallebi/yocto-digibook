@@ -29,5 +29,3 @@ $database = (new Database);
 \Illuminate\Pagination\Paginator::viewFactoryResolver(function () {
     return new App\Helper\PaginatorView();
 });
-
-//$flash = new \Plasticbrain\FlashMessages\FlashMessages();

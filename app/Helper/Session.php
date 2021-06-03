@@ -42,4 +42,9 @@ class Session implements DataInterface
     {
         unset($_SESSION[$key]);
     }
+
+    public function all()
+    {
+        return $_SESSION;
+    }
 }

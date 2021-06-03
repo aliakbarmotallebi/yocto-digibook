@@ -2,14 +2,18 @@
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Facades\Cart;
+
 class MainController {
 
 	protected $catgories;
 
 	public function __construct()
 	{
+	
 		$this->catgories = Category::get();
 	}
+
 	public function index()
 	{
 		if(! request()->input('search')){
