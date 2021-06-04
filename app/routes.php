@@ -10,6 +10,7 @@ Route::get('/category/{id}', 'Main\MainController@catgeory')->name('main.categor
 Route::get('/carts', 'Main\CartController@index')->name('cart.index');
 Route::get('/carts/delete/{rowId}', 'Main\CartController@delete')->name('cart.delete');
 Route::get('/carts/add/{id}', 'Main\CartController@add')->name('cart.add');
+Route::get('/product/{id}', 'Main\MainController@single')->name('product.single');
 
 
 Route::get('/login', 'Auth\LoginController@index')->name('auth.index');

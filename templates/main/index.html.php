@@ -25,14 +25,19 @@
             <div class="card shadow-sm">
               <img height="300" src="<?= asset($product->image) ?>" alt="<?= $product->title ?>">
               <div class="card-body">
-                <p class="card-text"><?= $product->title ?></p>
+
+                <p class="card-text">
+                  <a href="<?= url("/product/{$product->id}") ?>">
+                    <?= $product->title ?>
+                  </a>
+                </p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <a href="<?= url("/carts/add/{$product->id}") ?>" class="btn btn-sm btn-outline-secondary">
                       افزودن به سبد
                     </a>
                   </div>
-                  <small class="text-muted"><?= $product->price ?></small>
+                  <small class="text-success fs-5"><?= $product->price ?></small>
                 </div>
               </div>
             </div>

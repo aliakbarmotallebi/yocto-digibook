@@ -52,7 +52,7 @@
                             </tr>
                         </tfoot>
                     </table>
-                    <a href="<?= route('checkout.index') ?>" class="btn btn-primary">تکمیل سفارش</a>
+                    <a href="<?= route('checkout.index') ?>" class="btn btn-outline-primary">تکمیل سفارش</a>
                 </div>
             </div>
         </div>

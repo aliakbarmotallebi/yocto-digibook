@@ -40,6 +40,17 @@ class MainController {
 		return view('main/index.html.php', compact('products', 'catgories'));
 	}
 
+	public function single($param)
+	{
+		$product = Product::find($param->id);
+		
+		if(! $product){
+			redirect('/');
+		}
+
+		return view('main/single.html.php', compact('product'));
+	}
+
 	public function logout()
     {
        session_destroy();

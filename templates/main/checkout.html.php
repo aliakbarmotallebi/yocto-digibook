@@ -61,7 +61,7 @@ include_once(__DIR__ . '/commons/header.html.php') ?>
                                 </div>
                             </div>
                             <div class="col-md-12 mt-2">
-                                <button type="submit" class="btn btn-success btn-sm btn-block w-100">سفارش دهید</button>
+                                <button type="submit" class="btn  btn-outline-primary w-100">سفارش دهید</button>
                             </div>
                         </div>
                     </div>
