@@ -31,6 +31,11 @@ Route::post('/checkout/store', 'Main\CheckoutController@storeOrderDetails')->nam
 //dashboard routes
 Route::get('/dashboard/index', 'Dashboard\DashboardController@index')->name('dashboard.index');
 Route::get('/dashboard/users/index', 'Dashboard\UserController@index')->name('dashboard.users.index');
+
 Route::get('/dashboard/orders/index', 'Dashboard\OrderController@index')->name('dashboard.orders.index');
 Route::get('/dashboard/orders/show/{id}', 'Dashboard\OrderController@show')->name('dashboard.orders.show');
 Route::get('/dashboard/orders/delete/{id}', 'Dashboard\OrderController@delete')->name('dashboard.orders.delete');
+
+Route::get('/dashboard/categories/index', 'Dashboard\CategoryController@index')->name('dashboard.categories.index');
+Route::post('/dashboard/categories/store', 'Dashboard\CategoryController@store')->name('dashboard.categories.store');
+Route::get('/dashboard/categories/delete/{id}', 'Dashboard\CategoryController@delete')->name('dashboard.categories.delete');
