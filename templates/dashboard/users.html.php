@@ -10,7 +10,9 @@
              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                  <h1 class="h2">مدیریت کاربران</h1>
              </div>
-
+             <div class="my-3">
+                <?= flash()->each() ?>
+            </div>
              <div class="card">
                  <header class="card-header">
                      لیست کاربران
