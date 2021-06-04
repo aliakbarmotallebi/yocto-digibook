@@ -3,16 +3,24 @@
 use App\Models\User;
 
 class DashboardController {
+
+	protected $user;
+
+	public function __construct()
+	{
+		if(! auth()->check() ){
+            return redirect(route('auth.index'));
+		}
+		
+		$this->user = auth()->user();
+
+		if(! $this->user->isAdmin()){
+			return redirect(route('main.index'));
+		}
+	}
 	
 	public function index()
 	{
-		$users = User::first();
-		return view('dashboard/index.html.php', [
-			'users' => $users
-		]);
-	}
-
-	public function store($param){
-		var_dump( $param);
+		return view('dashboard/index.html.php');
 	}
 }

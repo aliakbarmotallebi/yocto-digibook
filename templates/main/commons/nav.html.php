@@ -12,6 +12,9 @@
           <a class="me-3 py-2 text-dark text-decoration-none" href="<?= route('auth.register') ?>">ثبت نام</a>
           <a class="me-3 py-2 text-dark text-decoration-none" href="<?= route('auth.index') ?>">ورود</a>
         <?php else : ?>
+          <?php if(auth()->user()->isAdmin()): ?>
+            <a class="me-3 py-2 fw-bold text-dark text-decoration-none" href="<?= route('dashboard.index') ?>">داشبورد مدیریت</a>
+          <?php endif ?>
           <a class="me-3 py-2 fw-bold text-dark text-decoration-none" href="<?= route('user.orders') ?>">حساب کاربری</a>
           <a class="me-3 py-2 fw-bold text-dark text-decoration-none" href="<?= route('user.profile') ?>">ویرایش پروفایل</a>
           <a class="me-3 py-2 fw-bold text-dark text-decoration-none" href="<?= route('logout') ?>">خروج</a>

@@ -30,3 +30,4 @@ Route::post('/checkout/store', 'Main\CheckoutController@storeOrderDetails')->nam
 
 //dashboard routes
 Route::get('/dashboard/index', 'Dashboard\DashboardController@index')->name('dashboard.index');
+Route::get('/dashboard/users/index', 'Dashboard\UserController@index')->name('dashboard.users.index');
