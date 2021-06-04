@@ -1,8 +1,6 @@
 <?php namespace App\Controllers\Main;
 
 use App\Facades\Cart;
-use App\Helper\Session;
-use App\Helper\CartItem;
 use App\Models\Product;
 
 class CartController {

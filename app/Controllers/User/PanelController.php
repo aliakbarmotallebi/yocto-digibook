@@ -1,5 +1,7 @@
 <?php namespace App\Controllers\User;
 
+use App\Models\Order;
+
 class PanelController extends UserController {
     
     public function __construct()
@@ -9,7 +11,9 @@ class PanelController extends UserController {
 
 	public function orders()
 	{
-		return view('user/index.html.php');
+        $orders = $this->user->orders()->latest('id')->get();
+
+		return view('user/index.html.php', compact('orders'));
     }
     
     public function profile()
@@ -27,8 +31,11 @@ class PanelController extends UserController {
         } 
         
         $rules = [
-            'mobile'      => 'min:10',
-            'postal_code' => 'min:10'
+            'first_name'  => 'required',
+            'last_name'  => 'required',
+            'mobile'      => 'required|min:10',
+            'postal_code' => 'required|min:10',
+            'address'  => 'required'
         ];
         
         if(! validation(request()->all() , $rules)) {
@@ -43,5 +50,16 @@ class PanelController extends UserController {
         
         return redirect(route('user.profile'));
 
-	}
+    }
+    
+    public function showOrderDetails($param)
+    {
+        $order = $this->user->orders()->find($param->id);
+        if(! $order)
+        { return false;}
+
+        $details = $order->items;
+
+        return view('user/details.html.php', compact('details'));
+    }
 }

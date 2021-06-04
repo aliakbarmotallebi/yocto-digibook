@@ -32,6 +32,11 @@ class User extends Model {
         return (bool) ($this->role == self::ROLE_USER);
     }
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
     public function login()
     {
         $user = $this->whereUsername($this->username)->first();
@@ -51,7 +56,7 @@ class User extends Model {
     public function check(): bool
     {
         if(session()->exists('user_id')) {
-            $user = $this->find(session()->get('user_id'))->first();
+            $user = $this->find(session()->get('user_id'));
             if( $user )
             { return true; }
             session_destroy();
@@ -63,7 +68,7 @@ class User extends Model {
     public function user(): User
     {
         if($this->check()) {
-            $user = $this->find(session()->get('user_id'))->first();
+            $user = $this->find(session()->get('user_id'));
             if( $user )
             { return $user; }
         }

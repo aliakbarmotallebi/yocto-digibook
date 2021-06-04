@@ -10,7 +10,7 @@
                     سبد خرید شما
                 </div>
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table table-bordered table-responsive">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -38,12 +38,12 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="4">
+                                <td colspan="3">
                                     <span class="fw-bold">
                                         مبلغ قابل پرداخت
                                     </span>
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     <span class="fw-bold">
                                        <?= \App\Facades\Cart::total() ?>
                                        تومان
@@ -52,7 +52,7 @@
                             </tr>
                         </tfoot>
                     </table>
-                    <a href="#" class="btn btn-primary">تکمیل سفارش</a>
+                    <a href="<?= route('checkout.index') ?>" class="btn btn-primary">تکمیل سفارش</a>
                 </div>
             </div>
         </div>

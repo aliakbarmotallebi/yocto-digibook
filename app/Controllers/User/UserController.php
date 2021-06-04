@@ -12,7 +12,6 @@ class UserController {
         //     'username' => 'ali',
         //     'password' => '123456'
         // ]);
-
         if( ! auth()->check() ){
             return redirect(route('auth.index'));
         }

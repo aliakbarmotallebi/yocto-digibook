@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="lastName" class="form-label">نام خانوادگی</label>
-                                    <input type="text" class="form-control" id="lastName" name="last_name" value="<?= $user->first_name ?>">
+                                    <input type="text" class="form-control" id="lastName" name="last_name" value="<?= $user->last_name ?>">
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="mobile" class="form-label">تلفن همراه</label>
