@@ -9,7 +9,7 @@
         <a class="me-3 py-2 text-dark text-decoration-none" href="<?= route('main.index') ?>">صفحه اصلی</a>
         <a class="me-3 py-2 text-dark text-decoration-none" href="<?= route('auth.index') ?>">ارتباط با ما</a>
         <?php if (!auth()->check()) : ?>
-          <a class="me-3 py-2 text-dark text-decoration-none" href="<?= route('main.index') ?>">ثبت نام</a>
+          <a class="me-3 py-2 text-dark text-decoration-none" href="<?= route('auth.register') ?>">ثبت نام</a>
           <a class="me-3 py-2 text-dark text-decoration-none" href="<?= route('auth.index') ?>">ورود</a>
         <?php else : ?>
           <a class="me-3 py-2 fw-bold text-dark text-decoration-none" href="<?= route('user.orders') ?>">حساب کاربری</a>
