@@ -34,4 +34,9 @@ class Product extends Model {
 
     }
 
+    public function getBody()
+    {
+        return substr($this->description, 0, 200) . '...';
+    }
+
 }

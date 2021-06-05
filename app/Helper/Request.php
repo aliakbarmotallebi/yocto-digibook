@@ -38,4 +38,5 @@ class Request implements RequestInterface
     {
         return $_SERVER['REQUEST_METHOD'] == 'POST';
     }
+
 }

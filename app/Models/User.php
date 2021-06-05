@@ -27,6 +27,11 @@ class User extends Model {
         return (bool) ($this->role == self::ROLE_ADMIN);
     }
 
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
     public function isUser(): bool
     {
         return (bool) ($this->role == self::ROLE_USER);

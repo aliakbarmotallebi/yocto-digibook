@@ -123,3 +123,9 @@ if (! function_exists('collect')) {
 }
 
 
+if (! function_exists('old')) {
+
+    function old($field) {
+        return request($field);
+    }
+}

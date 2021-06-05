@@ -39,3 +39,11 @@ Route::get('/dashboard/orders/delete/{id}', 'Dashboard\OrderController@delete')-
 Route::get('/dashboard/categories/index', 'Dashboard\CategoryController@index')->name('dashboard.categories.index');
 Route::post('/dashboard/categories/store', 'Dashboard\CategoryController@store')->name('dashboard.categories.store');
 Route::get('/dashboard/categories/delete/{id}', 'Dashboard\CategoryController@delete')->name('dashboard.categories.delete');
+
+
+Route::get('/dashboard/products/index', 'Dashboard\ProductController@index')->name('dashboard.products.index');
+Route::get('/dashboard/products/create', 'Dashboard\ProductController@create')->name('dashboard.products.create');
+Route::post('/dashboard/products/store', 'Dashboard\ProductController@store')->name('dashboard.products.store');
+Route::get('/dashboard/products/edit/{id}', 'Dashboard\ProductController@edit')->name('dashboard.products.edit');
+Route::post('/dashboard/products/update/{id}', 'Dashboard\ProductController@update')->name('dashboard.products.update');
+Route::get('/dashboard/products/delete/{id}', 'Dashboard\ProductController@delete')->name('dashboard.products.delete');

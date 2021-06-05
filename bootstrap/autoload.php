@@ -1,5 +1,8 @@
 <?php ob_start();
 
+// error_reporting(E_ALL);
+// ini_set('display_errors', getenv('APP_DEBUG') ? 'On' : 'Off');
+
 // Start a Session
 if (!session_id()) @session_start();
 

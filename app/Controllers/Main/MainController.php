@@ -17,9 +17,9 @@ class MainController {
 	public function index()
 	{
 		if(! request()->input('search')){
-			$products = Product::paginate(10);
+			$products = Product::whereStatus(true)->latest()->paginate(10);
 		}else{
-			$products = Product::search(request()->input('search'))->paginate(10);
+			$products = Product::whereStatus(true)->latest()->search(request()->input('search'))->paginate(10);
 		}
 
 		$catgories = $this->catgories;
@@ -34,7 +34,7 @@ class MainController {
 			redirect('/');
 		}
 
-		$products = $catgory->products()->paginate(10);
+		$products = $catgory->products()->latest()->whereStatus(true)->paginate(10);
 		$catgories = $this->catgories;
 
 		return view('main/index.html.php', compact('products', 'catgories'));
@@ -42,7 +42,7 @@ class MainController {
 
 	public function single($param)
 	{
-		$product = Product::find($param->id);
+		$product = Product::whereStatus(true)->find($param->id);
 		
 		if(! $product){
 			redirect('/');
