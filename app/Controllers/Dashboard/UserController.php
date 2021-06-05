@@ -11,7 +11,7 @@ class UserController extends DashboardController{
 
 	public function index()
 	{
-        $users = User::latest()->paginate(5);
+        $users = User::latest()->get();
 		return view('dashboard/users.html.php', compact('users'));
 	}
 }

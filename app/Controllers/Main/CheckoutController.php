@@ -63,7 +63,7 @@ class CheckoutController
     
             foreach ($items as $item)
             {
-                $product = Product::find($item->id)->first();
+                $product = Product::find($item->id);
     
                 $orderItem = new OrderItem([
                     'product_id'    =>  $product->id,

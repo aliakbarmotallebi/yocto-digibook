@@ -12,7 +12,7 @@ class OrderController extends DashboardController{
 
 	public function index()
 	{
-        $orders = Order::latest('id')->paginate(5);
+        $orders = Order::latest('id')->get();
 		return view('dashboard/orders/index.html.php', compact('orders'));
     }
     

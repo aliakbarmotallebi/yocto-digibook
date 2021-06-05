@@ -17,7 +17,7 @@ class ProductController extends DashboardController{
 
 	public function index()
 	{
-        $products = Product::latest('id')->paginate(5);
+        $products = Product::latest('id')->get();
 		return view('dashboard/products/index.html.php', compact('products'));
     }
 

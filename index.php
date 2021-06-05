@@ -1,6 +1,7 @@
-<?php
+<?php require __DIR__ . '/bootstrap/autoload.php';
 
-require __DIR__ . '/bootstrap/autoload.php';
+error_reporting(E_ALL);
+ini_set('display_errors', getenv('APP_DEBUG'));
 
 define( 'DIR_PATH' , dirname( __FILE__ ) . DIRECTORY_SEPARATOR );
 

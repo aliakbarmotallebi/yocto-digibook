@@ -10,7 +10,6 @@ class MainController {
 
 	public function __construct()
 	{
-	
 		$this->catgories = Category::get();
 	}
 

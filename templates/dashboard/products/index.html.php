@@ -76,9 +76,6 @@
                             <?php endforeach ?>
                         </tbody>
                     </table>
-                    <div class="d-flex justify-content-start py-1">
-                        <?php echo ($products->render()); ?>
-                    </div>
                 </article>
             </div>
         </main>
